@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trạm Mưa Đêm — Không Gian Chữa Lành Overthinking (React)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/styles/app.css" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.3.1",
+        "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+        "htm": "https://esm.sh/htm@3.1.1"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="root">
+    <div id="bootLoader" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#090d16;color:#fef3c7;font-family:Inter,sans-serif;padding:24px;text-align:center;">
+      <div style="max-width:380px;">
+        <div style="font-size:32px;margin-bottom:10px;">🕯️</div>
+        <p id="bootStatus" style="margin:0;font-size:15px;">Đang thắp nến mở Trạm Mưa Đêm...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(function () {
+      var status = document.getElementById('bootStatus');
+      if (status) {
+        status.textContent = 'Không thể tải thư viện React từ CDN (esm.sh). Hãy kiểm tra kết nối mạng rồi tải lại trang.';
+      }
+    }, 8000);
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
